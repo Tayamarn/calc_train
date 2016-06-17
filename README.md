@@ -1,0 +1,1 @@
+To run the tests run `py.test` in the console.
