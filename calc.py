@@ -3,7 +3,7 @@ def calc(expression):
         res = expression.split('+')
         result = []
         for i in range(len(res)):
-            result.append(int(res[i]))
+            result.append(float(res[i]))
         return sum(result)
     except ValueError:
         pass
