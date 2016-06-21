@@ -5,5 +5,5 @@ def calc(expression):
         for i in range(len(res)):
             result.append(int(res[i]))
         return sum(result)
-    except:
+    except ValueError:
         pass
