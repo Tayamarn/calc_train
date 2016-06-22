@@ -1,16 +1,23 @@
 import pytest
 
-from calc import calc
+import calc
 
 
 @pytest.mark.parametrize('expression, expected', [
     ('2+2', 4),
     ('2+4.5', 6.5),
     ('11', 11),
-    ('', None),
-    ('+15', None),
-    ('fgjkfdljgk', None),
 ])
 def test_addition(expression, expected):
-    result = calc(expression)
+    result = calc.calc(expression)
     assert result == expected
+
+
+@pytest.mark.parametrize('expression', [
+    (''),
+    ('+15'),
+    ('fgjkfdljgk'),
+])
+def test_errors(expression):
+    with pytest.raises(ValueError):
+        calc.calc(expression)
