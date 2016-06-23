@@ -13,20 +13,21 @@ def test_addition(expression, expected):
     assert result == expected
 
 
-# @pytest.mark.parametrize('expression, expected', [
-#     ('2-2', 0),
-#     ('5-1', 4),
-#     ('2-7', -5),
-#     ('3.2-3.1', .1),
-# ])
-# def test_substration(expression, expected):
-#     result = calc.calc(expression)
-#     assert result == expected
+@pytest.mark.parametrize('expression, expected', [
+    ('2-2', 0),
+    ('5-1', 4),
+    ('2-7', -5),
+    ('3.2-3.1', .1),
+])
+def test_substration(expression, expected):
+    result = calc.calc(expression)
+    assert result == expected
 
 
 @pytest.mark.parametrize('expression', [
     (''),
     ('+15'),
+    ('1++1'),
     ('fgjkfdljgk'),
 ])
 def test_errors(expression):

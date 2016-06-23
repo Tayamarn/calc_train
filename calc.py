@@ -1,6 +1,11 @@
 def calc(expression):
-    res = expression.split('+')
+    res = list(expression)
+    while '-' in res:            
+        i = res.index('-')
+        res[i] = '+-'
+    res = ''.join(res).split('+')
+    
     result = []
-    for i in range(len(res)):
-        result.append(float(res[i]))
-    return sum(result)
+    for j in range(len(res)):
+        result.append(float(res[j]))
+    return round(sum(result), 6)
