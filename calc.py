@@ -2,8 +2,7 @@ def calc(expression):
     res = list(expression)
     while '-' in res:            
         i = res.index('-')
-        res.insert(i, '+-')
-        res.remove('-')
+        res[i] = '+-'
     res = ''.join(res).split('+')
     
     result = []
